@@ -1,8 +1,4 @@
-import valAsk from "/gif/val-ask.gif";
-import angryCat from "/images/angry-cat.png";
-import swanLove from "/images/swan-love.jpg";
 import cupid from "/cupid.png";
-import birdLove from "/images/bird-love.png";
 import { Outlet } from "react-router-dom";
 
 function App() {

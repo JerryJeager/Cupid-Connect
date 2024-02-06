@@ -1,5 +1,4 @@
 import valAsk from "/gif/val-ask.gif";
-import birdLove from "/images/bird-love.png";
 import swanLove from "/images/swan-love.jpg";
 
 import gsap from "gsap";
