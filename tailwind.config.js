@@ -7,7 +7,9 @@ export default {
       colors:{
         appBg: "#e6cfbd",
         lightGreen: "#38b000",
-        lightRed: "#eb1d1d"
+        lightRed: "#eb1d1d",
+        pink: "#ff396f",
+        yellow: "#ffe74c"
       }
     },
   },
