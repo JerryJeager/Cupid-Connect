@@ -8,7 +8,6 @@ import { firstIntroText, wordValentine } from "../data";
 
 const Home = () => {
   const scope = useRef(null);
-  const scope2 = useRef(null)
   const tl = useRef<any>()
 
   useGSAP(() => {
