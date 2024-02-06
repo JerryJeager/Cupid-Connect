@@ -55,7 +55,7 @@ const Home = () => {
     <section ref={scope}>
       <div className="hidden secondContent">
         <h2 className="txt2 opacity-0 text-center text-pink italic font-bold  text-lg lg:text-2xl">
-          Hey, there's no we without you and I
+          Hey, there's no we without <br /> you and I
         </h2>
         <div className="w-fit mx-auto pt-8">
           <img
