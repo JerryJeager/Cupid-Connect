@@ -1,9 +1,10 @@
 import valAsk from "/gif/val-ask.gif";
 import swanLove from "/images/swan-love.jpg";
+import angryCat from "/images/angry-cat.png"
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { firstIntroText, wordValentine } from "../data";
 import { getRandomRange } from "../helpers";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +16,7 @@ const Home = () => {
   const scope = useRef(null);
   const tl = useRef<any>();
   const noBtnRef = useRef(null);
+  const [isNoHovered, setIsNoHovered] = useState(false)
   const { contextSafe } = useGSAP({ scope: scope });
 
   useGSAP(
@@ -62,6 +64,7 @@ const Home = () => {
   );
 
   const onHover = contextSafe(() => {
+    setIsNoHovered(true)
     let h = getRandomRange();
     let w = getRandomRange();
     gsap.to(".noBtn", {
@@ -77,11 +80,11 @@ const Home = () => {
     <section ref={scope} className="">
       <div className="hidden secondContent">
         <h2 className="txt2 opacity-0 text-center text-pink italic font-bold  text-lg lg:text-2xl">
-          Hey, there's no we without <br /> you and I
+          {isNoHovered ? "You're a rebel, clicking on that 'No' button. Too bad it's just for show!" : <span>Hey, there's no we without <br /> you and I</span>}
         </h2>
         <div className="w-fit mx-auto pt-8">
           <img
-            src={valAsk}
+            src={isNoHovered ? angryCat : valAsk}
             className="w-[220px] h-[170px] lg:w-[350px] lg:h-[300px] rounded-lg askVal opacity-0"
             alt="val-ask-image"
           />
