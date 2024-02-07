@@ -6,14 +6,16 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { firstIntroText, wordValentine } from "../data";
 import { getRandomRange } from "../helpers";
+import { useNavigate } from "react-router-dom";
 
-gsap.registerPlugin()
+gsap.registerPlugin();
 
 const Home = () => {
+  const navigate = useNavigate();
   const scope = useRef(null);
   const tl = useRef<any>();
-  const noBtnRef = useRef(null)
-  const { contextSafe } = useGSAP({scope: scope});
+  const noBtnRef = useRef(null);
+  const { contextSafe } = useGSAP({ scope: scope });
 
   useGSAP(
     () => {
@@ -60,17 +62,16 @@ const Home = () => {
   );
 
   const onHover = contextSafe(() => {
-    let h = getRandomRange()
-    let w = getRandomRange()
-     gsap.to(".noBtn", {
-        duration: .3,
-        ease: "power1.inOut",
-        position: "relative",
-        yPercent: h,
-        xPercent: w
-        
-      });
-  })
+    let h = getRandomRange();
+    let w = getRandomRange();
+    gsap.to(".noBtn", {
+      duration: 0.3,
+      ease: "power1.inOut",
+      position: "relative",
+      yPercent: h,
+      xPercent: w,
+    });
+  });
 
   return (
     <section ref={scope} className="">
@@ -82,11 +83,14 @@ const Home = () => {
           <img
             src={valAsk}
             className="w-[220px] h-[170px] lg:w-[350px] lg:h-[300px] rounded-lg askVal opacity-0"
-            alt=""
+            alt="val-ask-image"
           />
         </div>
 
-        <div className=" text-white font-bold mt-4 flex gap-8 justify-center">
+        <div
+          onClick={() => navigate("/thank-you")}
+          className=" text-white font-bold mt-4 flex gap-8 justify-center"
+        >
           <button className="answerBtn opacity-0 z-20 bg-lightGreen p-2 rounded-lg w-[100px] lg:w-[120px]">
             Yes
           </button>
@@ -117,7 +121,7 @@ const Home = () => {
         <div className="w-fit mx-auto pt-8 swan opacity-0">
           <img
             src={swanLove}
-            alt=""
+            alt="swan-love-image"
             className="w-[220px] h-[170px] lg:w-[350px] lg:h-[300px] rounded-lg"
           />
         </div>
