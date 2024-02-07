@@ -88,10 +88,9 @@ const Home = () => {
         </div>
 
         <div
-          onClick={() => navigate("/thank-you")}
           className=" text-white font-bold mt-4 flex gap-8 justify-center"
         >
-          <button className="answerBtn opacity-0 z-20 bg-lightGreen p-2 rounded-lg w-[100px] lg:w-[120px]">
+          <button onClick={() => navigate("/thank-you")} className="answerBtn opacity-0 z-20 bg-lightGreen p-2 rounded-lg w-[100px] lg:w-[120px]">
             Yes
           </button>
           <button
