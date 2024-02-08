@@ -5,7 +5,6 @@ import angryCat from "/images/angry-cat.png"
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-import { firstIntroText, wordValentine } from "../data";
 import { getRandomRange } from "../helpers";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +17,9 @@ const Home = () => {
   const noBtnRef = useRef(null);
   const [isNoHovered, setIsNoHovered] = useState(false)
   const { contextSafe } = useGSAP({ scope: scope });
+
+  let firstIntroText = "I'll make everyday your Birthday and every night your ".split("")
+  let wordValentine = "Valentine".split("")
 
   useGSAP(
     () => {
